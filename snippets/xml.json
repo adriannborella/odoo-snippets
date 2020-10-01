@@ -1,0 +1,218 @@
+{
+    "field_simple": {
+        "prefix": "field_simple",
+        "body": [
+            "<field name=\"$1\" />"
+        ],
+        "description": "Ingreso un field"
+    },
+    "field_position":
+    {
+        "prefix": "field_position",
+        "body": [
+            "<field name='$1' position='$2'>",
+            "\t<field name='$3' />",	
+            "</field>"
+        ],
+        "description": "fieldAdd"
+    },
+    "view_inherit": {
+        "prefix": "view_inherit",
+        "body": [
+            "<record model=\"ir.ui.view\" id=\"$1_$2_view\">",
+            "\t<field name=\"name\">$1.$2.view</field>",
+            "\t<field name=\"model\">$3</field>",
+            "\t<field name=\"inherit_id\" ref=\"$4\" />",
+            "\t<field name=\"arch\" type=\"xml\">",		
+            "\t\t",		
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "vistaheredada"
+    },
+    "xml_base": {
+        "prefix": "xml_base",
+        "body": [
+            "<odoo>",
+            "\t<data>",
+            "\t</data>",
+            "</odoo>"
+        ],
+        "description": "vistabase"
+    },
+    "all_views":
+    {
+        "prefix": "all_views",
+        "body": [
+            "<odoo>",
+            "\t<data>",
+            "\t\t<record id=\"view_search_$1\" model=\"ir.ui.view\">",
+            "\t\t\t<field name=\"name\">$1.search.view</field>",
+            "\t\t\t<field name=\"model\">$2</field>",
+            "\t\t\t<field name=\"arch\" type=\"xml\">",
+            "\t\t\t\t<search>",
+            "\t\t\t\t\t<field name=\"name\"/>",
+            "\t\t\t\t\t$4",
+            "\t\t\t\t</search>",
+            "\t\t\t</field>",
+            "\t\t</record>",
+            "\t\t",
+            "\t\t<record id=\"view_tree_$1_ui\" model=\"ir.ui.view\">",
+            "\t\t\t<field name=\"name\">$1.tree.view</field>",
+            "\t\t\t<field name=\"model\">$2</field>",
+            "\t\t\t<field name=\"arch\" type=\"xml\">",
+            "\t\t\t\t<tree>",
+            "\t\t\t\t\t$5",
+            "\t\t\t\t</tree>",
+            "\t\t\t</field>",
+            "\t\t</record>",
+            "\t\t",
+            "\t\t<record  id=\"view_form_$1_ui\" model=\"ir.ui.view\">",
+            "\t\t\t<field name=\"name\">$1.form.view</field>",
+            "\t\t\t<field name=\"model\">$2</field>",
+            "\t\t\t<field name=\"arch\" type=\"xml\">",
+            "\t\t\t<form>",
+            "\t\t\t<header>",
+            "\t\t\t",
+            "\t\t\t</header>",                  
+            "\t\t\t<sheet>",
+            "\t\t\t\t$6",
+            "\t\t\t</sheet>",          
+            "\t\t\t<div  class=\"oe_chatter\">",
+            "\t\t\t\t<field name=\"message_follower_ids\" widget=\"mail_followers\"></field>",
+            "\t\t\t\t<field name=\"message_ids\" widget=\"mail_thread\"></field>",
+            "\t\t\t</div>",
+            "\t\t\t</form>",
+            "\t\t\t</field>",
+            "\t\t</record>",
+            "\t\t<record model=\"ir.actions.act_window\" id=\"$1_list_action\">",
+            "\t\t\t<field name=\"name\">$3</field>",
+            "\t\t\t<field name=\"res_model\">$2</field>",
+            "\t\t\t<field name=\"view_type\">form</field>",
+            "\t\t\t<field name=\"view_mode\">tree,form</field>",
+            "\t\t\t<field name=\"help\" type=\"html\">",
+            "\t\t\t\t<p class=\"oe_view_nocontent_create\">Cree el primer $3</p>",
+            "\t\t\t</field>",
+            "\t\t</record>",
+            "\t</data>",
+            "</odoo>"
+        ],
+        "description": "vistapropia"
+    },
+    "view_wizard":{
+        "prefix": "view_wizard",
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "<odoo>",
+            "\t<data noupdate=\"0\">",
+            "",
+            "\t\t<record id=\"view_$1_form\" model=\"ir.ui.view\">",
+            "\t\t\t<field name=\"name\">$2</field>",
+            "\t\t\t<field name=\"model\">asw.$1</field>",
+            "\t\t\t<field name=\"type\">form</field>",
+            "\t\t\t<field name=\"arch\" type=\"xml\">",
+            "\t\t\t\t<form string=\"\">",
+            "\t\t\t\t\t<group>                        ",
+            "\t\t\t\t\t\t$3",
+            "\t\t\t\t\t</group>",
+            "\t\t\t\t\t<footer>",
+            "\t\t\t\t\t\t<button name=\"$4\" string=\"$5\" type=\"object\" class=\"oe_highlight\"/>",
+            "\t\t\t\t\t\t<button special=\"cancel\" string=\"Cancelar\" class=\"oe_link\" default_focus=\"1\"/>",
+            "\t\t\t\t\t</footer>",
+            "\t\t\t\t</form>",
+            "\t\t\t</field>",
+            "\t\t</record>",
+            "",
+            "\t\t<record id=\"action_$1\" model=\"ir.actions.act_window\">",
+            "\t\t\t<field name=\"name\">Wizard</field>",
+            "\t\t\t<field name=\"res_model\">asw.$1</field>",
+            "\t\t\t<field name=\"view_type\">form</field>",
+            "\t\t\t<field name=\"view_mode\">form</field>",
+            "\t\t\t<field name=\"target\">new</field>",
+            "\t\t</record>",
+            "",
+            "    </data>",
+            "</odoo>"
+        ]
+    },
+    "view_report":
+    {
+        "prefix": "view_report",
+        "body": [
+            "<odoo>",
+            "\t<data>",	
+            "\t<report id='$1' model='$2' string='$3' report_type='qweb-pdf' name='$4.$5' file='$4.$5' attachment_use='False' attachment='str(object.name)' +'.pdf' />",		
+            "\t<template id='report_reconocimiento_deuda'>",
+            "\t\t<t t-call='report.html_container'>",
+            "\t\t\t<t t-foreach='docs' t-as='o'>",
+            "\t\t\t\t<t t-call='report.external_layout'>",
+            "\t\t\t\t<div class='page'>",
+            "\t\t\t\t</div>",
+            "\t\t\t</t>",
+            "\t\t</t>",
+            "\t\t</t>",
+            "\t</template>",
+            "\t</data>",
+            "</odoo>"
+        ],
+        "description": "vistareporte"
+    },   
+    "filter_group_by":	{
+        "prefix": "filter_group_by",
+        "body": "<filter string='group_$1' name='$2' context=\"{'group_by':'$1'}\"/>",
+        "description": "Filtro de busqueda agrupado por un campo"
+    },
+    "menuitem":	{
+        "prefix": "menuitem",
+        "body": "<menuitem name=\"$1\" sequence=\"$2\" id=\"$3\" parent=\"$4\" action=\"$5_list_action\"/>",
+        "description": "Menuitem resumido"
+    },
+    "field_tree":	{
+        "prefix": "field_tree",
+        "body": [
+            "<field name=\"$1\" >",
+            "\t<tree create=\"true\" delete=\"true\" edit=\"true\" editable=\"bottom\">",
+            "\t\t$2",
+            "\t</tree>",
+            "</field>"
+        ],
+        "description": "Menuitem resumido"
+    },    
+    "view_base_tree":{
+        "prefix": "view_base_tree",
+        "body": [
+            "<record id=\"view_tree_$1_ui\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">$1.tree.view</field>",
+            "\t<field name=\"model\">$2</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<tree>",
+            "\t\t\t$3",
+            "\t\t</tree>",
+            "\t</field>",
+            "</record>"
+        ]
+    },    
+    "view_base_form":{
+        "prefix": "view_base_form",
+        "body": [
+            "<record id=\"view_form_$1_ui\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">$1.form.view</field>",
+            "\t<field name=\"model\">$2</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<form>",
+            "\t\t\t<header>",
+            "\t\t\t",
+            "\t\t\t</header>",                  
+            "\t\t\t<sheet>",
+            "\t\t\t\t$3",
+            "\t\t\t</sheet>",          
+            "\t\t\t<div  class=\"oe_chatter\">",
+            "\t\t\t\t<field name=\"message_follower_ids\" widget=\"mail_followers\"></field>",
+            "\t\t\t\t<field name=\"message_ids\" widget=\"mail_thread\"></field>",
+            "\t\t\t</div>",
+            "\t\t</form>",
+            "\t</field>",
+            "</record>"
+        ]
+    }
+}

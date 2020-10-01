@@ -1,0 +1,16 @@
+{
+    "data_sequence":	{
+        "prefix": "data_sequence",
+        "body": [
+            "<data noupdate='1'>",
+            "\t<record id=\"ir_sequence_$1\" model=\"ir.sequence\">",
+            "\t\t<field name=\"name\">$2</field>",
+            "\t\t<field name=\"number_next_actual\" eval=\"1\" />",
+            "\t\t<field name=\"prefix\">$3</field>",
+            "\t\t<field name=\"padding\" eval=\"$4\" />",
+            "\t</record>",
+            "</data>"
+        ],
+        "description": "Menuitem resumido"
+    }
+}

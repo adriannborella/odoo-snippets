@@ -267,5 +267,10 @@
     {
         "prefix": "add_track_visibility",
         "body": ",track_visibility='onchange'"		
-    }    
+    },
+	"next_sequence_by_id":
+	{
+		"prefix": "next_sequence",
+		"body": "code = self.env.ref('$1.$2').next_by_id()"		
+	}  
 }

@@ -36,6 +36,7 @@ Dentro de esta extención añadiremos snippets para trabajar con Odoo de una man
 * exeption_validation (Codigo para generar un raise ValidationError)
 * search (Codigo para realizar un search)
 * return_view (Codigo para retornar una vista)
+* next_sequence_by_id
 
 ### Manifest
 * data
@@ -48,3 +49,28 @@ Dentro de esta extención añadiremos snippets para trabajar con Odoo de una man
 
 ### Testt
 * test_class
+
+## XML
+
+### Data
+* data_sequence
+
+### Campos
+* field_simple
+* field_position
+* field_tree
+* filter_group_by
+* menuitem
+
+### Vistas
+* view_inherit
+* xml_base
+* all_views
+* view_wizard
+* view_report
+* view_base_tree
+* view_base_form
+
+## CSV
+
+* access Crea la regla de acceso para el archivo ir.model.access.csv

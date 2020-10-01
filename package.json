@@ -16,6 +16,18 @@
             {
                 "language": "python",
                 "path": "./snippets/python.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml_data.json"
+            },
+            {
+                "language": "csv",
+                "path": "./snippets/csv.json"
             }
         ]
     }
