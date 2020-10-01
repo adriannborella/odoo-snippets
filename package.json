@@ -1,0 +1,22 @@
+{
+    "name": "odoo-snippets",
+    "displayName": "odoo_snippets",    
+    "description": "Snippets for odoo development",
+    "icon" : "images/odoo.png",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "publisher": "odooSnippets14",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./snippets/python.json"
+            }
+        ]
+    }
+}

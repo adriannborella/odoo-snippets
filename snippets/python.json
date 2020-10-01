@@ -1,0 +1,294 @@
+{    
+    "ipdb": {
+        "prefix": "ipdb",
+        "body": [
+            "import ipdb; ipdb.set_trace()"
+        ],
+        "description": "ipdb"
+    },
+    "exception_validation": {
+        "prefix": "exception_validation",
+        "body": [
+            "raise ValidationError(\"$texto\")"
+        ],
+        "description": "exception"
+    },
+    "addSelection" :{
+        "prefix": "addSelection",
+        "body": "$1 = fields.Selection(selection_add=[('$2', '$3'), ('$4', '$5')])"
+    },
+    "search" :
+    {
+        "prefix": "search",
+        "body": "$1 = self.env['$2'].search([('$3','$4',$5)])"
+    },
+    "class_inherit":
+    {
+        "prefix" : "class_inherit",
+        "body":[ "# -*- coding: utf-8 -*-",
+        "from odoo import models, fields, api",
+        "",
+        "class $1(models.Model):",
+            "\t_inherit = '$2'"
+        ]
+    },
+    "class_transient":
+    {
+        "prefix" : "class_transient",
+        "body":[ "# -*- coding: utf-8 -*-",
+        "from odoo import models, fields, api",
+        "",
+        "class $1(models.TransientModel):",
+            "\t_name = '$2'"
+        ]
+    },
+    "class":
+    {
+        "prefix" : "class",
+        "body":[ "# -*- coding: utf-8 -*-",
+        "from odoo import models, fields, api",
+        "",
+        "",
+        "class asw_$1(models.Model):",
+            "\t_name = 'asw.$1'",
+            "\t_inherit = ['mail.thread']",
+            "\t_description = '$2'"			
+        ]
+    },
+    "class_abstract":
+    {
+        "prefix" : "class_abstract",
+        "body":[ "# -*- coding: utf-8 -*-",
+        "from odoo import models, fields, api",
+        "",
+        "",
+        "class asw_$1(models.AbstractModel):",
+        "\t_name = 'asw.$1'"
+        ]
+    },
+    "sqlconstraints":
+    {
+        "prefix": "sqlconstraints",
+        "body": [
+            "_sql_constraints = [",
+            "('name_unique', 'UNIQUE(name)', '$1'),   ",
+            "]"
+        ]
+    },
+    "xml":
+    {
+        "prefix": "xml",
+        "body": [
+            "'view/$1.xml',"
+        ]
+    },
+    "unlink":
+    {
+        "prefix": "unlink",
+        "body": [
+            "@api.multi",
+            "def unlink(self):",
+                "# Agregar codigo de validacion aca",
+                "\t",
+                "\treturn super($1, self).unlink()"
+        ]
+    },
+    "write":
+    {
+        "prefix": "write",
+        "body": [
+            "@api.multi",
+            "def write(self, vals):",
+                "\t# Agregar codigo de validacion aca",
+                "\t",
+                "\treturn super($1, self).write(vals)"
+        ]
+    }
+    ,
+    "create":
+    {
+        "prefix": "create",
+        "body": [
+            "@api.model",
+            "def create(self, vals):",
+                "\t# Agregar codigo de validacion aca",
+                "\t",
+                "\treturn super($1, self).create(vals)"
+        ]
+    }
+    ,
+    "default_get":
+    {
+        "prefix": "default_get",
+        "body": [
+            "@api.model",
+            "def default_get(self, fields):",
+                "\t# Agregar codigo de validacion aca",
+                "\t",
+                "\treturn super($1, self).default_get(fields)"
+        ]
+    }
+    ,
+    "copy":
+    {
+        "prefix": "copy",
+        "body": [
+            "@api.multi",
+            "def copy(self, default=None):",
+                "\t# Agregar codigo de validacion aca",
+                "\t",
+                "\treturn super($1, self).copy()"
+        ]
+    },
+    "init":
+    {
+        "prefix": "init",
+        "body": [
+            "def __init__(self, **kwargs):",
+            "\tsuper($1, self).__init__()"
+        ]
+    },
+    "metodoflask" : {
+        "prefix" : "metodoflask",
+        "body": [
+            "@app.route('/$1')",
+            "def $2():",
+            "\treturn 'archivo'"
+        ]
+    },
+    "views":
+    {
+        "prefix": "views",
+        "body": [
+            "'views_views/$1.xml',"
+        ]
+    },
+    "data":
+    {
+        "prefix": "data",
+        "body": [
+            "'data/$1_data.xml',"
+        ]
+    },
+    "security":
+    {
+        "prefix": "security",
+        "body": [
+            "'security/$1.xml',"
+        ]
+    },
+    "wizard":
+    {
+        "prefix": "wizard",
+        "body": [
+            "'wizard/$1.xml',"
+        ]
+    },
+    "report":
+    {
+        "prefix": "report",
+        "body": [
+            "'report/$1.xml',"
+        ]
+    },
+    "controllers":
+    {
+        "prefix": "controllers",
+        "body": [
+            "'controllers/$1.xml',"
+        ]
+    },
+    "demo":
+    {
+        "prefix": "demo",
+        "body": [
+            "'demo/$1_demo.xml',"
+        ]
+    },
+    "return_view":
+    {
+        "prefix": "return_view",
+        "body":[
+        "view = self.env.ref('$1')",
+        "",
+        "return {",
+        "\t'type': 'ir.actions.act_window',",
+        "\t'name': '$2',",
+        "\t'res_model': '$3',",
+        "\t'view_mode': 'form',",
+        "\t'target': 'new',",
+        "\t'context' : { $4 }",
+        "}"
+        ]
+    },
+    "test_class": {
+        "prefix": "test_class",
+        "body": [
+            "# -*- coding: utf-8 -*-",
+            "from odoo.tests import TransactionCase",
+            "from odoo.exceptions import UserError, ValidationError",
+            "",
+            "class test_$1(TransactionCase):"
+        ]
+    },
+    "afc":
+    {
+        "prefix": "field_char",
+        "body": "$1 = fields.Char(string='$2')"		
+    },
+    "afd":
+    {
+        "prefix": "field_date",
+        "body": "$1 = fields.Date(string='$2')"		
+    },
+    "afdt":
+    {
+        "prefix": "field_datetime",
+        "body": "$1 = fields.Datetime(string='$2')"		
+    },
+    "aff":
+    {
+        "prefix": "field_float",
+        "body": "$1 = fields.Float(string='$2')"		
+    },
+    "afm":
+    {
+        "prefix": "field_monetary",
+        "body": "$1 = fields.Monetary(string='$2', currency_field='currency_id')"		
+    },
+    "afs":
+    {
+        "prefix": "field_selection",
+        "body": "$1 = fields.Selection(string='$2', selection=[('$3', '$4')$5])$6"		
+    },
+    "afi":
+    {
+        "prefix": "field_integer",
+        "body": "$1 = fields.Integer(string='$2')"		
+    },
+    "afsa":
+    {
+        "prefix": "add_selection",
+        "body": ",('$1', '$2')"		
+    },
+    "afm2o":
+    {
+        "prefix": "field_many2one",
+        "body": "$1_id = fields.Many2one(string='$2', comodel_name='$3', ondelete='restrict')"		
+    },
+    "afo2m":
+    {
+        "prefix": "field_one2many",
+        "body": "$1_ids = fields.One2many(string='$2',comodel_name='$3',inverse_name='$4' )"		
+    },
+    "afm2o_monetary":
+    {
+        "prefix": "add_field_monetary",
+        "body": "currency_id = fields.Many2one(string='Moneda', comodel_name='res.currency', ondelete='restrict')"		
+    },
+    "trvic":
+    {
+        "prefix": "add_track_visibility",
+        "body": ",track_visibility='onchange'"		
+    }    
+}
