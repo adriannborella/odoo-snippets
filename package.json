@@ -3,7 +3,7 @@
     "displayName": "odoo_snippets",    
     "description": "Snippets for odoo development",
     "icon" : "images/odoo.png",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.49.0"
     },
