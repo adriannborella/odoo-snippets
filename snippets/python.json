@@ -272,5 +272,19 @@
 	{
 		"prefix": "next_sequence",
 		"body": "code = self.env.ref('$1.$2').next_by_id()"		
-	}  
+    },
+	"log info":{
+		"prefix": "linfo",
+		"body": [
+			"log.info(f'$1 {$2}')"
+		],
+		"description": "Log info regular"
+	},
+	"log info pformat":{
+		"prefix": "linfo-pf",
+		"body":[
+			"log.info(pformat($1))"
+		],
+		"description": "Log info with pformat method"
+	} 
 }
