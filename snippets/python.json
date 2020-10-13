@@ -137,7 +137,7 @@
     {
         "prefix": "views",
         "body": [
-            "'views_views/$1.xml',"
+            "'views/$1_views.xml',"
         ]
     },
     "data":
