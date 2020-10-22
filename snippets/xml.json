@@ -214,5 +214,16 @@
             "\t</field>",
             "</record>"
         ]
-    }
+    },
+    "act_window":
+    {
+        "prefix": "act_window",
+        "body": [
+        "<record id= \"$name_act_window\" model=\"ir.actions.act_window\">",
+        "\t<field name=\"name\">$Human_Name</field>",
+        "\t<field name=\"res_model\">$module</field>",
+        "\t<field name=\"view_mode\">tree,form</field>",
+        "</record>"
+        ]
+    },
 }
